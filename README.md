@@ -48,3 +48,19 @@ The Minima Naming System (MNS) revolutionizes service creation with short, uniqu
 
 By creating an MNS system over Maxima, users gain access to encrypted email, transactions, and payments with simple names and cryptographically secure methods. This system enhances the Minima ecosystem, fostering growth and innovation in decentralized communication and financial interactions. Join us in shaping the future of Minima with enhanced privacy, security, and usability.
 
+## Notes
+
+- Distributed / replicated DB over the Nodes that makes MNS network over Maxima.
+- MNS entry point: A maxima address to a Node of the MNS network to reach other nodes of the network.
+  - The MNS network pulishes on chain on a contract, a random list of a few entry point, this list would be refresh every few hours.
+    
+- The MNS network does not requires that every node has a permanent Maxima Address, only a part of the Network would have Maxima permanent address and some of them would be published on chain every few hours to avoid attacks.
+  The other nodes of the network would be connected between them as Contacts, making a kind of mesh network
+- Mailbox: It is a record on a DB with an unique name choosen by a user that stores Maxima messages sent by any user encrypted with the Maxima publickey of the owner of the mailbox.
+  - Security: As any information to be stored on the mailbox would come thru Maxima, and the message itself will be encrypted from the origin with the Maxima publickey of the owner of the mailbox, it is a robust and safe system to be used on a distributed or replicated DB.
+    
+- Hand Shake Protocol:
+  - The server give the Maxima address to contact to him to the user and a random number.
+  - The user send a Maxima message to the server with the random code received.
+  - The server checks that the publickey of the mailbox is the same from the Maxima message received from the user and also checks the random code.
+  - The server grants access to the functionality asked.
